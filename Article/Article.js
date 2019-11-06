@@ -87,7 +87,7 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   },
   {
-    title: "Brett Sherwood's Improbable Race for the Presidency",
+    title: "Brett Sherwood's Paragraph",
     date: "Feb 5th, 2029",
     firstParagraph: `People of the world, Unite! `,
 
@@ -162,3 +162,16 @@ newArticles = data.map(item => {
   parentArticles.appendChild(newArt);
 });
 //   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+
+// GSAP
+const bounceTitle = document.querySelector(".header h1");
+TweenMax.to(bounceTitle, 3, { scale: 1.2 });
+TweenMax.to($(".menu-button"), 3, { x: 150 });
+$(".article").hover(
+  function() {
+    TweenMax.to($(this), 2, { x: 100, ease: Bounce.easeOut });
+  },
+  function() {
+    TweenMax.to($(this), 2, { x: 0 });
+  }
+);
